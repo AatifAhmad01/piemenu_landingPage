@@ -1,0 +1,14 @@
+.primary-button-light{
+    background-image: linear-gradient( var(--light-color) 0%, #dddfc6 100%);
+    border-radius: 10px;
+    padding: 10px 10px;
+    min-width: 140px;
+    border: none;
+    font-weight: bold;
+    color: black;
+}
+
+.primary-button-light:active{
+    background-image: none;
+    background-color: #e2cdbe;
+}

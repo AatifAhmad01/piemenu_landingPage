@@ -1,0 +1,32 @@
+.step-selected{
+    height: 100px;
+    width: 0px;
+    background-color: var(--primary-color);
+    margin-right: 10px;
+    transition: all 0.2s;
+}
+
+.step-active{
+    width: 16px !important;
+}
+
+.step-number{
+    font-size: 9rem;
+    font-weight: 700;
+    margin-right: 20px;
+    margin-top: 30px;
+
+    text-align: start;
+    font-family: 'lovelo';
+}
+
+.step-title{
+    font-size: 1.8rem;
+    margin-bottom: 0px;
+}
+
+.step-description{
+    font-size: 1.5rem;
+    color: #848f98;
+}
+

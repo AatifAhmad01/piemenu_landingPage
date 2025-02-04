@@ -1,0 +1,32 @@
+.menu-project-card{
+    border: solid 1px black;
+    /* width: 310px; */
+    border-radius: 17px;
+    padding: 20px;
+
+    transform: translateY(0);
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+.menu-project-card:hover{
+    transform: translateY(-18px);
+}
+
+.menu-project-card-items-cont{
+
+    width: 290px;
+    height: 290px;
+    
+    gap: 10px;
+    display: flex;
+    margin-top: 20px;
+    flex-wrap: wrap;
+
+    /* flex-direction: column; */
+}
+.menu-project-card-item{
+    width: 130px;
+    height: 130px;
+    background-color: gray;
+    border-radius: 10px;
+}

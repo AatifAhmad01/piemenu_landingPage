@@ -2,10 +2,18 @@ import React from 'react';
 import './style.css';
 import Burger from '../../assets/images/burger.webp';
 
-const FeedbackCard = () => {
+const FeedbackCard = ({pos}) => {
+
+    let posStyle = {};
+    if (pos === 'left') {
+        posStyle = {transform: 'translateX(-15px)'};
+    } else if (pos === 'right') {
+        posStyle = {transform: 'translateX(15px)'};
+    }
+
     return (
         <>
-            <div className='feedback-card flex'>
+            <div className='feedback-card flex' style={posStyle}>
                 <div>
                     <img className='feedback-card-image' src={Burger}/>
                 </div>

@@ -1,5 +1,13 @@
 .feedback-card{
     margin: 30px 0;
+    padding: 10px;
+    border-radius: 10px;
+
+    transition: all ease-in 0.3s;
+}
+
+.feedback-card:hover{
+    border: 1px solid #afafaf;
 }
 
 .feedback-card-title{

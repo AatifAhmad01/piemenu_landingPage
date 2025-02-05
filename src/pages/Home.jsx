@@ -9,6 +9,9 @@ import StepCard from '../components/StepCard/StepCard';
 import MenuProjectCard from '../components/MenuProjectCard/MenuProjectCard';
 import PrimaryButtonLight from '../components/PrimaryButtonLight/PrimaryButtonLight';
 import FeedbackCard from '../components/FeedbackCard/FeedbackCard';
+import TextInput from '../components/Input/TextInput';
+import FoodOrderItem from '../components/FoodOrderItem/FoodOrderItem';
+import Cursor from '../assets/icons/click.png';
 
 
 const Home = () => {
@@ -90,14 +93,24 @@ const Home = () => {
                 </section>
 
                 {/* Menu Showcase */}
-                <section className='' style={{backgroundColor: '#222222', height: '750px'}}>
+                <section className='' style={{backgroundColor: '#222222'}}>
                     <div className='container ' >
-                        <h3 className='text-center clr-light' style={{fontSize: '3rem', padding: '60px 0'}}>Built With Pie Menu</h3>
+                        <h3 className=' clr-light' style={{fontSize: '3rem', padding: '60px 0'}}>Built With Pie Menu</h3>
 
-                        <div className='flex' style={{justifyContent: 'space-around'}}>
+                        {/* <div className='flex' style={{justifyContent: 'space-around'}}>
                             <MenuProjectCard />
                             <MenuProjectCard />
-                            <MenuProjectCard />
+                        </div> */}
+                        <div className="row">
+                            <div className="col-12 col-lg-4">
+                                <MenuProjectCard />
+                            </div>
+                            <div className="col-12 col-lg-4">
+                                <MenuProjectCard />
+                            </div>
+                            <div className="col-12 col-lg-4">
+                                <MenuProjectCard />
+                            </div>
                         </div>
                         <div className='flex-center pd-20'  style={{marginTop: '20px'}}>
                             <PrimaryButtonLight title={'Try Now'}/>
@@ -105,30 +118,118 @@ const Home = () => {
                     </div>
                 </section>
 
+                {/* Client Reviews */}
                 <section className='pd-v-100'>
                     <div className="container">
 
-                        <h3 className='text-center ' style={{fontSize: '3rem', marginBottom: '40px'}}>Clients' Feedback</h3>
-
-
+                        <h3 className='' style={{fontSize: '3rem', marginBottom: '40px'}}>Clients' Feedback</h3>
                         <div className="row">
                             <div className="col-12 col-lg-6">
                                 <FeedbackCard/>
-                                <FeedbackCard/>
+                                <FeedbackCard pos={'left'}/>
                                 <FeedbackCard/>
                             </div>
 
                             <div className="col-12 col-lg-6">
                                 <FeedbackCard/>
-                                <FeedbackCard/>
+                                <FeedbackCard pos={'right'}/>
                                 <FeedbackCard/>
                             </div>
                         </div>
                     </div>
                 </section>
 
+                {/* Whats Next */}
+                <section className='pd-b-100'>
+                    <div className="container">
+                        <div className="row" style={{display: 'flex', alignItems: 'center'}}>
 
+                            
 
+                            <div className="col-12 col-lg-5">
+                                <h3 className='' style={{fontSize: '3rem', marginBottom: 0}}>Whats Next</h3>
+                                <p className='' style={{padding: '10px 0', fontSize: '1.2em'}}>{'You will get a link to your new online restaurant which you can share on your social media and customers'}</p>
+
+                                <div className="col-12 col-lg-5  d-block d-lg-none" style={{marginBottom: '30px'}}>
+                                    <div className="row">
+                                        <div style={{display: 'flex', justifyContent: 'flex-end', alignItems: 'center'}}>
+                                            <div className="col-4 col-lg-3">
+
+                                                <FoodOrderItem image={Burger}/>
+                                            </div>
+                                            <div className="col-4" style={{position: 'relative'}}>
+                                                <FoodOrderItem image={Burger}/>
+                                                <img src={Cursor} alt="" style={{position: 'absolute', width: '40px', height: '40px', bottom: '-5%', left: '75%'}}/>
+                                            </div>
+
+                                            <div className="col-4 col-lg-3">
+                                                <FoodOrderItem image={Burger}/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='p-4 p-sm-0' style={{display: 'flex', gap: '20px'}}>
+                                    <TextInput type={'email'} placeholder={'Email'}/>
+                                    <PrimaryButton title={'Notify Me'}/>
+                                </div>
+                            </div>
+                            <div className="col-lg-2 d-none d-lg-block">
+
+                            </div>
+                            <div className="col-12 col-lg-5 d-none d-lg-block">
+                                <div className="row" >
+                                    <div style={{display: 'flex', gap: '20px', justifyContent: 'flex-end', alignItems: 'center'}}>
+                                        <div className="col-4 col-lg-3">
+
+                                            <FoodOrderItem image={Burger}/>
+                                        </div>
+                                        <div className="col-4" style={{position: 'relative'}}>
+                                            <FoodOrderItem image={Burger}/>
+                                            <img src={Cursor} alt="" style={{position: 'absolute', width: '40px', height: '40px', bottom: '-5%', left: '75%'}}/>
+                                        </div>
+
+                                        <div className="col-4 col-lg-3">
+                                            <FoodOrderItem image={Burger}/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Bottom details */}
+                <section className='' style={{paddingBottom: '100px'}}>
+                    <div className="container">
+                        <div style={{display: 'flex', gap: '20px',flexDirection: 'column', alignItems: 'center'}}>
+                            <h3 className='' style={{fontSize: '3rem', marginBottom: 0}}>Easy Menu</h3>
+                            <p className='text-center' style={{padding: '10px 0', fontSize: '1.2em', width: '500px'}}>{'You will get a link to your new online restaurant which you can share on your social media and customers'}</p>
+                            <PrimaryButton title={"Register Now"}/>
+                        </div>
+                    </div>
+                </section>
+
+                <section className='' style={{backgroundColor: 'var(--dark-color)', padding: '20px 0'}}>
+                    <div className="container">
+                        {/* <div className="row">
+                            <h3 className='' style={{fontSize: '3rem', marginBottom: 0, color: 'var(--light-color)'}}>Easy Menu</h3>
+                        </div> */}
+                        <div className="row">
+                            {/* <div className="col-12 col-lg-6">
+                                <p className='' style={{padding: '10px 0', fontSize: '1.2em', color: 'var(--light-color)'}}>{'Powered By'} <a href="">Pie Sites</a></p>
+                            </div> */}
+
+                            <div className="col-12 col-lg-6">
+                                <h3 className='' style={{fontSize: '3rem', marginBottom: 0, color: 'var(--light-color)'}}>Easy Menu</h3>
+                               
+                            </div>
+                            <div className="col-12 col-lg-6">
+                                <p className='' style={{padding: '10px 0', fontSize: '1.2em', color: 'var(--light-color)'}}>{'Powered By'} <a href="https://piesites.com">Pie Sites</a></p>
+                                <p className='' style={{padding: '10px 0', color: 'var(--light-color)'}}><a href="https://piesites.com">Privary Policy</a><a href="https://piesites.com">Customer Support</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </main>
         </>
     );

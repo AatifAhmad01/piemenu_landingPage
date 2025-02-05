@@ -2,10 +2,10 @@ import React from 'react';
 import './style.css';
 import LkeImage from '../../assets/icons/like.png'
 
-const FoodCard = ({image}) => {
+const FoodCard = ({image, style}) => {
     return (
         <>
-            <div className='food-card bg-white' style={{padding: '10px', borderRadius: '10px'}}>
+            <div className='food-card bg-white' style={{...style, padding: '10px', borderRadius: '10px'}}>
                 <div className='food-card-image-container'>
                     <img src={image} alt="food" className='food-card-image'/>
                 </div>

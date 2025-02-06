@@ -31,40 +31,49 @@ const Home = () => {
                 <section>
                     <div className='hero-bg-design'>
                         <Circle size="200px" style={{backgroundColor: 'var(--primary-color)', position: 'absolute', top: '-130px'}}/>
-                        <Circle size="1100px" style={{background: 'var(--primary-color)', position: 'absolute', bottom: '-300px', right: '-200px'}}/>
+                        <div className='d-none d-lg-block'>
+                            <Circle size="1100px" style={{background: 'var(--primary-color)', position: 'absolute', bottom: '-300px', right: '-200px'}}/>
+                        </div>
                     </div>
 
                     <div className="container-xxl">
 
-                        <div className="row" style={{height: '800px'}}>
-                            <div className='col-12 col-lg-6 flex-column' style={{alignItems: 'flex-start', justifyContent: 'space-around'}}>
+                        <div className="row pd-v-100 pb-0">
+                            <div className='col-12 col-md-8 col-lg-6 p-sm-4 flex-column' style={{alignItems: 'flex-start', justifyContent: 'center', gap: '40px'}}>
                                 <div className="row" >
                                     <div className="" style={{}}>
-                                        <h1 style={{fontSize: '4rem', fontFamily: 'Lovelo'}}>TURN YOUR STORE</h1>
-                                        <h1 style={{fontSize: '4rem', fontFamily: 'Lovelo'}}>ONLINE</h1>
+                                        <h1 className='display-3' style={{fontFamily: 'Lovelo', color: 'var(--primary-color)'}}>get your online menu</h1>
+                                        <p style={{width: '100%', maxWidth: '400px'}}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat nemo optio vitae enim cumque, illum assumenda odit reinde eum? Voluptate.</p>
                                     </div>
-
                                 </div>
-
-                                <div>
+                                <div style={{width: '100%'}}>
                                     <h3>List Your Menu</h3>
-                                    <div style={{display: 'flex', gap: '20px'}}>
-                                        <FoodCard image={Burger} />
-                                        <FoodCard image={Burger}/>
-                                        <FoodCard image={Burger}/>
-                                    </div>
-                                    <PrimaryButton title={'Get Now'}/>
+                                    <div className='hero-foodcard-cont' style={{overflow: 'auto', width: '100%'}}>
+                                        <div style={{display: 'flex', gap: '20px'}}>
+                                            <FoodCard image={Burger} />
+                                            <FoodCard image={Burger}/>
+                                            <FoodCard image={Burger}/>
+                                        </div>
+                                        <div className='d-none d-md-block'>
 
+                                            <PrimaryButton title={'Get Now'}/>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
+                            <div className='d-block d-md-none' style={{}}>
+                                <PrimaryButton title={'Get Now'} style={{width: '100%', height: '65px', fontSize: '1.4em'}}/>
+                            </div>
 
-                            <div className='col-12 col-lg-6 flex'>
+                            <div className="col-lg-1 d-none d-lg-block"></div>
+
+                            <div className='col-12 col-md-4 col-lg-5 flex' style={{alignSelf: 'center'}}>
                                 <div className='flex' style={{justifyContent: 'flex-end', alignItems: 'center', width: '100%', position: 'relative'}}>
-                                    <div className='mobile-web-view-cont' >
+                                    <div className='mobile-web-view-cont ' >
                                         <img src={MobileView} alt="mobile-web-view" style={{width: '100%'}}/>
                                     </div>
-                                    <div style={{width: '90%'}}>
+                                    <div className='d-none d-lg-block' style={{width: '90%'}}>
                                         <img src={WebView} alt="menu-web-view" style={{width: '100%', marginTop: '30px'}}/>
                                     </div>
                                 </div>
@@ -204,7 +213,7 @@ const Home = () => {
                     <div className="container">
                         <div style={{display: 'flex', gap: '20px',flexDirection: 'column', alignItems: 'center'}}>
                             <h3 className='' style={{fontSize: '3rem', marginBottom: 0}}>Easy Menu</h3>
-                            <p className='text-center' style={{padding: '10px 0', fontSize: '1.2em', width: '500px'}}>{'You will get a link to your new online restaurant which you can share on your social media and customers'}</p>
+                            <p className='text-center' style={{padding: '10px 0', fontSize: '1.2em', maxWidth: '500px'}}>{'You will get a link to your new online restaurant which you can share on your social media and customers'}</p>
                             <PrimaryButton title={"Register Now"}/>
                         </div>
                     </div>

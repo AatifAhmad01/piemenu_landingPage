@@ -42,6 +42,17 @@
   /* background-color: aqua; */
 }
 
+.mobile-web-view-cont{
+  width: 45%;
+  box-shadow: 0px 0px 10px rgb(164, 164, 164);
+  border-radius: 20px; 
+  overflow: hidden;
+  transform: translateX(-70px);
+  position: absolute; 
+  left: 0;
+  bottom: 0;
+}
+
 /* Flex */
 .flex{
   display: flex;
@@ -68,9 +79,7 @@
 .pd-20{
   padding: 20px;
 }
-.pd-v-100{
-  padding: 100px 0;
-}
+
 
 /* Size */
 .h-100v{
@@ -79,9 +88,16 @@
 .w-100v{
   height: 100vw;
 }
+.pd-v-100{
+  padding: 100px 0;
+}
+.pd-v-50{
+  padding: 50px 0;
+}
 .pd-b-100{
   padding-bottom: 100px;
 }
+
 
 
 

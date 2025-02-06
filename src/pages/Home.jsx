@@ -59,10 +59,14 @@ const Home = () => {
                             </div>
 
 
-                            <div className='col-12 col-lg-6 flex' position='relative' >
-                                <div className='flex' style={{justifyContent: 'flex-end', alignItems: 'center', width: '100%'}}>
-                                    <img src={MobileView} alt="mobile-web-view" style={{width: '40%', transform: 'translate(100px, 140px)'}}/>
-                                    <img src={WebView} alt="menu-web-view" style={{width: '80%', marginTop: '30px'}}/>
+                            <div className='col-12 col-lg-6 flex'>
+                                <div className='flex' style={{justifyContent: 'flex-end', alignItems: 'center', width: '100%', position: 'relative'}}>
+                                    <div className='mobile-web-view-cont' >
+                                        <img src={MobileView} alt="mobile-web-view" style={{width: '100%'}}/>
+                                    </div>
+                                    <div style={{width: '90%'}}>
+                                        <img src={WebView} alt="menu-web-view" style={{width: '100%', marginTop: '30px'}}/>
+                                    </div>
                                 </div>
                             </div>
 
@@ -71,10 +75,10 @@ const Home = () => {
                 </section>
 
                 {/* Overflow */}
-                <section className='pd-v-100' style={{position: 'relative'}}>
+                <section className='pd-v-50' style={{position: 'relative'}}>
                     <Circle size="300px" style={{backgroundColor: 'var(--primary-color)', position: 'absolute', top: '50%', transform: 'translate(-70%, -50%)'}}/>
 
-                    <div className="container" style={{marginTop: '100px'}}>
+                    <div className="container">
                         <div className="row">
 
                             <div className="col-12 col-lg-6">
@@ -86,16 +90,16 @@ const Home = () => {
                                     isSelected={selectedStep == 3} onClick={() => onClcikStep(3)}/>
                             </div>
                             <div className="col-12 col-lg-6 flex-center">
-                                <img src={MobileView} alt="" style={{height: '700px'}}/>
+                                <img src={MobileView} alt="" style={{height: '600px'}}/>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 {/* Menu Showcase */}
-                <section className='' style={{backgroundColor: '#222222'}}>
-                    <div className='container ' >
-                        <h3 className=' clr-light' style={{fontSize: '3rem', padding: '60px 0'}}>Built With Pie Menu</h3>
+                <section className='pd-v-50' style={{backgroundColor: '#222222'}}>
+                    <div className='container'>
+                        <h3 className='' style={{fontSize: '3rem', marginBottom: '40px', color: 'var(--light-color)'}}>Built with pie menu</h3>
 
                         {/* <div className='flex' style={{justifyContent: 'space-around'}}>
                             <MenuProjectCard />
@@ -119,7 +123,7 @@ const Home = () => {
                 </section>
 
                 {/* Client Reviews */}
-                <section className='pd-v-100'>
+                <section className='pd-v-50'>
                     <div className="container">
 
                         <h3 className='' style={{fontSize: '3rem', marginBottom: '40px'}}>Clients' Feedback</h3>
@@ -140,11 +144,9 @@ const Home = () => {
                 </section>
 
                 {/* Whats Next */}
-                <section className='pd-b-100'>
+                <section className='pd-v-50' style={{backgroundColor: 'var(--primary-color)'}}>
                     <div className="container">
                         <div className="row" style={{display: 'flex', alignItems: 'center'}}>
-
-                            
 
                             <div className="col-12 col-lg-5">
                                 <h3 className='' style={{fontSize: '3rem', marginBottom: 0}}>Whats Next</h3>
@@ -176,11 +178,10 @@ const Home = () => {
                             <div className="col-lg-2 d-none d-lg-block">
 
                             </div>
-                            <div className="col-12 col-lg-5 d-none d-lg-block">
+                            <div className="col-12 col-lg-5 col-md-6 d-none d-lg-block">
                                 <div className="row" >
                                     <div style={{display: 'flex', gap: '20px', justifyContent: 'flex-end', alignItems: 'center'}}>
                                         <div className="col-4 col-lg-3">
-
                                             <FoodOrderItem image={Burger}/>
                                         </div>
                                         <div className="col-4" style={{position: 'relative'}}>
@@ -199,7 +200,7 @@ const Home = () => {
                 </section>
 
                 {/* Bottom details */}
-                <section className='' style={{paddingBottom: '100px'}}>
+                <section className='pd-v-50' >
                     <div className="container">
                         <div style={{display: 'flex', gap: '20px',flexDirection: 'column', alignItems: 'center'}}>
                             <h3 className='' style={{fontSize: '3rem', marginBottom: 0}}>Easy Menu</h3>

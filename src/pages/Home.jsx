@@ -12,6 +12,7 @@ import FeedbackCard from '../components/FeedbackCard/FeedbackCard';
 import TextInput from '../components/Input/TextInput';
 import FoodOrderItem from '../components/FoodOrderItem/FoodOrderItem';
 import Cursor from '../assets/icons/click.png';
+import StepCardMobile from '../components/StepCardMobile/StepCardMobile';
 
 
 const Home = () => {
@@ -90,7 +91,7 @@ const Home = () => {
                     <div className="container">
                         <div className="row">
 
-                            <div className="col-12 col-lg-6">
+                            <div className="col-lg-6 d-none d-lg-block">
                                 <StepCard data={{step: 1, title: 'Fill in a short form', description: 'Provide your restaurant information, Send your restaurant menu'}}
                                     isSelected={selectedStep == 1} onClick={() => onClcikStep(1)}/>
                                 <StepCard data={{step: 2, title: 'We built it', description: 'Our team will build your restaurant page with your food items in 24 hours'}}
@@ -98,8 +99,18 @@ const Home = () => {
                                 <StepCard data={{step: 3, title: 'Share with your customers', description: 'You will get a link to your new online restaurant which you can share on your social media and customers'}}
                                     isSelected={selectedStep == 3} onClick={() => onClcikStep(3)}/>
                             </div>
+
                             <div className="col-12 col-lg-6 flex-center">
                                 <img src={MobileView} alt="" style={{height: '600px'}}/>
+                            </div>
+
+                            <div className='pd-4 d-block d-lg-none'>
+                                <StepCardMobile data={{step: 1, title: 'Fill in a short form', description: 'Give a little details about your restaurant'}}
+                                    isSelected={selectedStep == 1}  onClick={() => onClcikStep(1)}/>
+                                <StepCardMobile data={{step: 2, title: 'We built it', description: 'Hellow'}}
+                                    isSelected={selectedStep == 2}  onClick={() => onClcikStep(2)}/>
+                                <StepCardMobile data={{step: 3, title: 'Share with your customers', description: 'Hellow'}}
+                                    isSelected={selectedStep == 3}  onClick={() => onClcikStep(3)}/>
                             </div>
                         </div>
                     </div>
@@ -108,7 +119,7 @@ const Home = () => {
                 {/* Menu Showcase */}
                 <section className='pd-v-50' style={{backgroundColor: '#222222'}}>
                     <div className='container'>
-                        <h3 className='' style={{fontSize: '3rem', marginBottom: '40px', color: 'var(--light-color)'}}>Built with pie menu</h3>
+                        <h3 className='display-3' style={{marginBottom: '40px', color: 'var(--light-color)'}}>Built with pie menu</h3>
 
                         {/* <div className='flex' style={{justifyContent: 'space-around'}}>
                             <MenuProjectCard />
@@ -118,10 +129,10 @@ const Home = () => {
                             <div className="col-12 col-lg-4">
                                 <MenuProjectCard />
                             </div>
-                            <div className="col-12 col-lg-4">
+                            <div className="col-12 col-lg-4 d-none d-lg-block">
                                 <MenuProjectCard />
                             </div>
-                            <div className="col-12 col-lg-4">
+                            <div className="col-12 col-lg-4 d-none d-lg-block">
                                 <MenuProjectCard />
                             </div>
                         </div>
@@ -135,15 +146,15 @@ const Home = () => {
                 <section className='pd-v-50'>
                     <div className="container">
 
-                        <h3 className='' style={{fontSize: '3rem', marginBottom: '40px'}}>Clients' Feedback</h3>
+                        <h3 className='display-3 mb-lg-4'>Clients' Feedback</h3>
                         <div className="row">
                             <div className="col-12 col-lg-6">
-                                <FeedbackCard/>
+                                <FeedbackCard />
                                 <FeedbackCard pos={'left'}/>
                                 <FeedbackCard/>
                             </div>
 
-                            <div className="col-12 col-lg-6">
+                            <div className="col-12 col-lg-6 d-none d-lg-block">
                                 <FeedbackCard/>
                                 <FeedbackCard pos={'right'}/>
                                 <FeedbackCard/>
@@ -158,14 +169,28 @@ const Home = () => {
                         <div className="row" style={{display: 'flex', alignItems: 'center'}}>
 
                             <div className="col-12 col-lg-5">
-                                <h3 className='' style={{fontSize: '3rem', marginBottom: 0}}>Whats Next</h3>
-                                <p className='' style={{padding: '10px 0', fontSize: '1.2em'}}>{'You will get a link to your new online restaurant which you can share on your social media and customers'}</p>
+                                <h3 className='display-3 text-lg-left text-center clr-light mb-lg-0 mb-sm-4' >What's Next</h3>
+                                
+                                <div className='d-lg-none d-block' style={{margin: '20px 0'}}></div>
+                                <p className='text-center clr-light' style={{padding: '10px 0', fontSize: '1.2em'}}>{'You will get a link to your new online restaurant which you can share on your social media and customers'}</p>
+
+                                <div className='p-sm-0' style={{display: 'flex', gap: '20px'}}>
+                                    <TextInput type={'email'} placeholder={'Email'}/>
+                                    <div className=' d-none d-lg-block'>
+                                        <PrimaryButton title={'Notify Me'} style={{height: '100%'}}/>
+                                    </div>
+                                </div>
+                                <div className='d-block d-lg-none p-2' >
+                                    <div className='flex' style={{display: 'flex', justifyContent: 'center', marginTop: '10px'}}>
+                                        <PrimaryButton title={'Notify Me'}/>
+                                    </div>
+                                </div>
+                                <div className='d-lg-none d-block' style={{margin: '20px 0'}}></div>
 
                                 <div className="col-12 col-lg-5  d-block d-lg-none" style={{marginBottom: '30px'}}>
                                     <div className="row">
                                         <div style={{display: 'flex', justifyContent: 'flex-end', alignItems: 'center'}}>
                                             <div className="col-4 col-lg-3">
-
                                                 <FoodOrderItem image={Burger}/>
                                             </div>
                                             <div className="col-4" style={{position: 'relative'}}>
@@ -179,10 +204,8 @@ const Home = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className='p-4 p-sm-0' style={{display: 'flex', gap: '20px'}}>
-                                    <TextInput type={'email'} placeholder={'Email'}/>
-                                    <PrimaryButton title={'Notify Me'}/>
-                                </div>
+                                
+                                
                             </div>
                             <div className="col-lg-2 d-none d-lg-block">
 
@@ -212,7 +235,7 @@ const Home = () => {
                 <section className='pd-v-50' >
                     <div className="container">
                         <div style={{display: 'flex', gap: '20px',flexDirection: 'column', alignItems: 'center'}}>
-                            <h3 className='' style={{fontSize: '3rem', marginBottom: 0}}>Easy Menu</h3>
+                            <h3 className='display-3' style={{marginBottom: 0}}>Easy Menu</h3>
                             <p className='text-center' style={{padding: '10px 0', fontSize: '1.2em', maxWidth: '500px'}}>{'You will get a link to your new online restaurant which you can share on your social media and customers'}</p>
                             <PrimaryButton title={"Register Now"}/>
                         </div>
@@ -221,17 +244,9 @@ const Home = () => {
 
                 <section className='' style={{backgroundColor: 'var(--dark-color)', padding: '20px 0'}}>
                     <div className="container">
-                        {/* <div className="row">
-                            <h3 className='' style={{fontSize: '3rem', marginBottom: 0, color: 'var(--light-color)'}}>Easy Menu</h3>
-                        </div> */}
                         <div className="row">
-                            {/* <div className="col-12 col-lg-6">
-                                <p className='' style={{padding: '10px 0', fontSize: '1.2em', color: 'var(--light-color)'}}>{'Powered By'} <a href="">Pie Sites</a></p>
-                            </div> */}
-
                             <div className="col-12 col-lg-6">
                                 <h3 className='' style={{fontSize: '3rem', marginBottom: 0, color: 'var(--light-color)'}}>Easy Menu</h3>
-                               
                             </div>
                             <div className="col-12 col-lg-6">
                                 <p className='' style={{padding: '10px 0', fontSize: '1.2em', color: 'var(--light-color)'}}>{'Powered By'} <a href="https://piesites.com">Pie Sites</a></p>

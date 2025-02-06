@@ -1,0 +1,39 @@
+.step-mobile-cont{
+    border: 1px solid rgb(223, 223, 223);
+    border-radius: 5px;
+    margin: 10px;
+    background-color: white;
+}
+
+.step-mobile-selected{
+    height: 60px;
+    width: 0px;
+    background-color: var(--primary-color);
+    margin-right: 10px;
+    transition: all 0.2s;
+}
+
+.step-mobile-active{
+    width: 12px !important;
+}
+
+.step-mobile-number{
+    font-size: 2.3rem;
+    font-weight: 700;
+    margin-right: 10px;
+    margin-top: 5px;
+
+    text-align: start;
+    font-family: 'lovelo';
+}
+
+.step-mobile-title{
+    font-size: 1rem;
+    margin-bottom: 0px;
+}
+
+.step-mobile-description{
+    /* font-size: 1.5rem; */
+    color: #848f98;
+}
+

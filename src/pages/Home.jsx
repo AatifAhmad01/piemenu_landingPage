@@ -13,6 +13,8 @@ import TextInput from '../components/Input/TextInput';
 import FoodOrderItem from '../components/FoodOrderItem/FoodOrderItem';
 import Cursor from '../assets/icons/click.png';
 import StepCardMobile from '../components/StepCardMobile/StepCardMobile';
+import Footer from '../components/Footer/Footer.jsx';
+import Hero from '../components/Hero/Hero';
 
 
 const Home = () => {
@@ -20,184 +22,140 @@ const Home = () => {
     const [selectedStep, setSelectedStep] = useState(1);
     
 
-    const onClcikStep = (id) => {
+    const onClickStep = (id) => {
         setSelectedStep(id);
     }
 
     return (
         <>
-            <main>
-                {/* Hero Section */}
-                <section className=''>
-                    <div className='hero-bg-design'>
-                        <Circle size="200px" style={{backgroundColor: 'var(--primary-color)', position: 'absolute', top: '-130px'}}/>
-                        <div className='d-none d-lg-block'>
-                            <Circle size="1100px" style={{background: 'var(--primary-color)', position: 'absolute', bottom: '-300px', right: '-200px'}}/>
+            <main className=''>
+                <Hero />
+
+                {/* How It Works Section */}
+                <section className='pd-v-50' style={{position: 'relative'}}>
+                    <Circle size="300px" style={{backgroundColor: 'var(--primary-color)', position: 'absolute', top: '50%', transform: 'translate(-70%, -50%)'}}/>
+
+                    <div className="container mx-auto px-4">
+                        <div className="text-center mb-12">
+                            <h2 className='text-4xl lg:text-5xl font-bold mb-4'>How It Works</h2>
+                            <p className='text-lg text-gray-600 max-w-2xl mx-auto'>Create your restaurant's digital menu in just three simple steps</p>
                         </div>
-                    </div>
-
-                    <div className="container-xxl">
-
-                        <div className="row pd-v-100 pb-0">
-                            <div className='col-12 col-md-8 col-lg-6 p-sm-4 flex-column' style={{alignItems: 'flex-start', justifyContent: 'center', gap: '40px'}}>
-                                <div className="row" >
-                                    <div className="" style={{}}>
-                                        <h1 className='display-3' style={{fontFamily: 'Lovelo', color: 'var(--primary-color)'}}>get your online menu</h1>
-                                        <p style={{width: '100%', maxWidth: '400px'}}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat nemo optio vitae enim cumque, illum assumenda odit reinde eum? Voluptate.</p>
-                                    </div>
-                                </div>
-                                <div style={{width: '100%'}}>
-                                    <h3>List Your Menu</h3>
-                                    <div className='hero-foodcard-cont' style={{overflow: 'auto', width: '100%'}}>
-                                        <div style={{display: 'flex', gap: '20px'}}>
-                                            <FoodCard image={Burger} />
-                                            <FoodCard image={Burger}/>
-                                            <FoodCard image={Burger}/>
-                                        </div>
-                                        <div className='d-none d-md-block'>
-
-                                            <PrimaryButton title={'Get Now'}/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className='d-block d-md-none' style={{}}>
-                                <PrimaryButton title={'Get Now'} style={{width: '100%', height: '65px', fontSize: '1.4em'}}/>
-                            </div>
-
-                            <div className="col-lg-1 d-none d-lg-block"></div>
-
-                            <div className='col-12 col-md-4 col-lg-5 flex' style={{alignSelf: 'center'}}>
-                                <div className='flex' style={{justifyContent: 'flex-end', alignItems: 'center', width: '100%', position: 'relative'}}>
-                                    <div className='mobile-web-view-cont ' >
-                                        <img src={MobileView} alt="mobile-web-view" style={{width: '100%'}}/>
-                                    </div>
-                                    <div className='d-none d-lg-block' style={{width: '90%'}}>
-                                        <img src={WebView} alt="menu-web-view" style={{width: '100%', marginTop: '30px'}}/>
-                                    </div>
-                                </div>
-                            </div>
-
+                        <div className='flex justify-center items-center'>
+                            <p>Create free account</p>
                         </div>
                     </div>
                 </section>
 
                 {/* Overflow */}
-                <section className='pd-v-50' style={{position: 'relative'}}>
+                {/* <section className='pd-v-50' style={{position: 'relative'}}>
                     <Circle size="300px" style={{backgroundColor: 'var(--primary-color)', position: 'absolute', top: '50%', transform: 'translate(-70%, -50%)'}}/>
 
-                    <div className="container">
-                        <div className="row">
+                    <div className="container mx-auto px-4">
+                        <div className="flex flex-wrap">
 
-                            <div className="col-lg-6 d-none d-lg-block">
+                            <div className="w-full lg:w-6/12 hidden lg:block">
                                 <StepCard data={{step: 1, title: 'Fill in a short form', description: 'Provide your restaurant information, Send your restaurant menu'}}
-                                    isSelected={selectedStep == 1} onClick={() => onClcikStep(1)}/>
+                                    isSelected={selectedStep == 1} onClick={() => onClickStep(1)}/>
                                 <StepCard data={{step: 2, title: 'We built it', description: 'Our team will build your restaurant page with your food items in 24 hours'}}
-                                    isSelected={selectedStep == 2} onClick={() => onClcikStep(2)}/>
+                                    isSelected={selectedStep == 2} onClick={() => onClickStep(2)}/>
                                 <StepCard data={{step: 3, title: 'Share with your customers', description: 'You will get a link to your new online restaurant which you can share on your social media and customers'}}
-                                    isSelected={selectedStep == 3} onClick={() => onClcikStep(3)}/>
+                                    isSelected={selectedStep == 3} onClick={() => onClickStep(3)}/>
                             </div>
 
-                            <div className="col-12 col-lg-6 flex-center">
+                            <div className="w-full lg:w-6/12 flex justify-center items-center">
                                 <img src={MobileView} alt="" style={{height: '600px'}}/>
                             </div>
 
-                            <div className='pd-4 d-block d-lg-none'>
+                            <div className='p-4 block lg:hidden'>
                                 <StepCardMobile data={{step: 1, title: 'Fill in a short form', description: 'Give a little details about your restaurant'}}
-                                    isSelected={selectedStep == 1}  onClick={() => onClcikStep(1)}/>
+                                    isSelected={selectedStep == 1}  onClick={() => onClickStep(1)}/>
                                 <StepCardMobile data={{step: 2, title: 'We built it', description: 'Hellow'}}
-                                    isSelected={selectedStep == 2}  onClick={() => onClcikStep(2)}/>
+                                    isSelected={selectedStep == 2}  onClick={() => onClickStep(2)}/>
                                 <StepCardMobile data={{step: 3, title: 'Share with your customers', description: 'Hellow'}}
-                                    isSelected={selectedStep == 3}  onClick={() => onClcikStep(3)}/>
+                                    isSelected={selectedStep == 3}  onClick={() => onClickStep(3)}/>
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> */}
 
                 {/* Menu Showcase */}
-                <section className='pd-v-50' style={{backgroundColor: '#222222'}}>
-                    <div className='container'>
-                        <h3 className='display-3' style={{marginBottom: '40px', color: 'var(--light-color)'}}>Built with pie menu</h3>
-
-                        {/* <div className='flex' style={{justifyContent: 'space-around'}}>
-                            <MenuProjectCard />
-                            <MenuProjectCard />
-                        </div> */}
-                        <div className="row">
-                            <div className="col-12 col-lg-4">
+                {/* <section className='pd-v-50' style={{backgroundColor: '#222222'}}>
+                    <div className='container mx-auto px-4'>
+                        <h3 className='text-5xl font-bold mb-10' style={{color: 'var(--light-color)'}}>Built with pie menu</h3>
+                        <div className="flex flex-wrap">
+                            <div className="w-full lg:w-4/12">
                                 <MenuProjectCard />
                             </div>
-                            <div className="col-12 col-lg-4 d-none d-lg-block">
+                            <div className="w-full lg:w-4/12 hidden lg:block">
                                 <MenuProjectCard />
                             </div>
-                            <div className="col-12 col-lg-4 d-none d-lg-block">
+                            <div className="w-full lg:w-4/12 hidden lg:block">
                                 <MenuProjectCard />
                             </div>
                         </div>
-                        <div className='flex-center pd-20'  style={{marginTop: '20px'}}>
+                        <div className='flex justify-center items-center pd-20'  style={{marginTop: '20px'}}>
                             <PrimaryButtonLight title={'Try Now'}/>
                         </div>
                     </div>
-                </section>
+                </section> */}
 
                 {/* Client Reviews */}
-                <section className='pd-v-50'>
-                    <div className="container">
+                {/* <section className='pd-v-50'>
+                    <div className="container mx-auto px-4">
 
-                        <h3 className='display-3 mb-lg-4'>Clients' Feedback</h3>
-                        <div className="row">
-                            <div className="col-12 col-lg-6">
+                        <h3 className='text-5xl font-bold mb-4 lg:mb-4'>Clients' Feedback</h3>
+                        <div className="flex flex-wrap">
+                            <div className="w-full lg:w-6/12">
                                 <FeedbackCard />
                                 <FeedbackCard pos={'left'}/>
                                 <FeedbackCard/>
                             </div>
 
-                            <div className="col-12 col-lg-6 d-none d-lg-block">
+                            <div className="w-full lg:w-6/12 hidden lg:block">
                                 <FeedbackCard/>
                                 <FeedbackCard pos={'right'}/>
                                 <FeedbackCard/>
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> */}
 
                 {/* Whats Next */}
-                <section className='pd-v-50' style={{backgroundColor: 'var(--primary-color)'}}>
-                    <div className="container">
-                        <div className="row" style={{display: 'flex', alignItems: 'center'}}>
+                {/* <section className='pd-v-50' style={{backgroundColor: 'var(--primary-color)'}}>
+                    <div className="container mx-auto px-4">
+                        <div className="flex flex-wrap items-center">
 
-                            <div className="col-12 col-lg-5">
-                                <h3 className='display-3 text-lg-left text-center clr-light mb-lg-0 mb-sm-4' >What's Next</h3>
+                            <div className="w-full lg:w-5/12">
+                                <h3 className='text-5xl font-bold text-left lg:text-left text-center clr-light mb-0 lg:mb-0 mb-4 sm:mb-4' >What's Next</h3>
                                 
-                                <div className='d-lg-none d-block' style={{margin: '20px 0'}}></div>
-                                <p className='text-center clr-light' style={{padding: '10px 0', fontSize: '1.2em'}}>{'You will get a link to your new online restaurant which you can share on your social media and customers'}</p>
+                                <div className='block lg:hidden' style={{margin: '20px 0'}}></div>
+                                <p className='text-center clr-light m-0 p-0' style={{padding: '10px 0', fontSize: '1.2em'}}>{'You will get a link to your new online restaurant which you can share on your social media and customers'}</p>
 
-                                <div className='p-sm-0' style={{display: 'flex', gap: '20px'}}>
+                                <div className='p-0 sm:p-0' style={{display: 'flex', gap: '20px'}}>
                                     <TextInput type={'email'} placeholder={'Email'}/>
-                                    <div className=' d-none d-lg-block'>
+                                    <div className=' hidden lg:block'>
                                         <PrimaryButton title={'Notify Me'} style={{height: '100%'}}/>
                                     </div>
                                 </div>
-                                <div className='d-block d-lg-none p-2' >
-                                    <div className='flex' style={{display: 'flex', justifyContent: 'center', marginTop: '10px'}}>
+                                <div className='block lg:hidden p-2' >
+                                    <div className='flex justify-center' style={{marginTop: '10px'}}>
                                         <PrimaryButton title={'Notify Me'}/>
                                     </div>
                                 </div>
-                                <div className='d-lg-none d-block' style={{margin: '20px 0'}}></div>
+                                <div className='block lg:hidden' style={{margin: '20px 0'}}></div>
 
-                                <div className="col-12 col-lg-5  d-block d-lg-none" style={{marginBottom: '30px'}}>
-                                    <div className="row">
+                                <div className="w-full lg:w-5/12 block lg:hidden" style={{marginBottom: '30px'}}>
+                                    <div className="flex flex-wrap">
                                         <div style={{display: 'flex', justifyContent: 'flex-end', alignItems: 'center'}}>
-                                            <div className="col-4 col-lg-3">
+                                            <div className="w-4/12 lg:w-3/12">
                                                 <FoodOrderItem image={Burger}/>
                                             </div>
-                                            <div className="col-4" style={{position: 'relative'}}>
+                                            <div className="w-4/12" style={{position: 'relative'}}>
                                                 <FoodOrderItem image={Burger}/>
                                                 <img src={Cursor} alt="" style={{position: 'absolute', width: '40px', height: '40px', bottom: '-5%', left: '75%'}}/>
                                             </div>
 
-                                            <div className="col-4 col-lg-3">
+                                            <div className="w-4/12 lg:w-3/12">
                                                 <FoodOrderItem image={Burger}/>
                                             </div>
                                         </div>
@@ -206,21 +164,21 @@ const Home = () => {
                                 
                                 
                             </div>
-                            <div className="col-lg-2 d-none d-lg-block">
+                            <div className="w-full lg:w-2/12 hidden lg:block">
 
                             </div>
-                            <div className="col-12 col-lg-5 col-md-6 d-none d-lg-block">
-                                <div className="row" >
+                            <div className="w-full lg:w-5/12 md:w-6/12 hidden lg:block">
+                                <div className="flex flex-wrap" >
                                     <div style={{display: 'flex', gap: '20px', justifyContent: 'flex-end', alignItems: 'center'}}>
-                                        <div className="col-4 col-lg-3">
+                                        <div className="w-4/12 lg:w-3/12">
                                             <FoodOrderItem image={Burger}/>
                                         </div>
-                                        <div className="col-4" style={{position: 'relative'}}>
+                                        <div className="w-4/12" style={{position: 'relative'}}>
                                             <FoodOrderItem image={Burger}/>
                                             <img src={Cursor} alt="" style={{position: 'absolute', width: '40px', height: '40px', bottom: '-5%', left: '75%'}}/>
                                         </div>
 
-                                        <div className="col-4 col-lg-3">
+                                        <div className="w-4/12 lg:w-3/12">
                                             <FoodOrderItem image={Burger}/>
                                         </div>
                                     </div>
@@ -228,32 +186,20 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> */}
 
                 {/* Bottom details */}
-                <section className='pd-v-50' >
-                    <div className="container">
+                {/* <section className='pd-v-50' >
+                    <div className="container mx-auto px-4">
                         <div style={{display: 'flex', gap: '20px',flexDirection: 'column', alignItems: 'center'}}>
-                            <h3 className='display-3' style={{marginBottom: 0}}>Easy Menu</h3>
-                            <p className='text-center' style={{padding: '10px 0', fontSize: '1.2em', maxWidth: '500px'}}>{'You will get a link to your new online restaurant which you can share on your social media and customers'}</p>
+                            <h3 className='text-5xl font-bold m-0' style={{marginBottom: 0}}>Easy Menu</h3>
+                            <p className='text-center m-0 p-0' style={{padding: '10px 0', fontSize: '1.2em', maxWidth: '500px'}}>{'You will get a link to your new online restaurant which you can share on your social media and customers'}</p>
                             <PrimaryButton title={"Register Now"}/>
                         </div>
                     </div>
-                </section>
+                </section> */}
 
-                <section className='' style={{backgroundColor: 'var(--dark-color)', padding: '20px 0'}}>
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-12 col-lg-6">
-                                <h3 className='' style={{fontSize: '3rem', marginBottom: 0, color: 'var(--light-color)'}}>Easy Menu</h3>
-                            </div>
-                            <div className="col-12 col-lg-6">
-                                <p className='' style={{padding: '10px 0', fontSize: '1.2em', color: 'var(--light-color)'}}>{'Powered By'} <a href="https://piesites.com">Pie Sites</a></p>
-                                <p className='' style={{padding: '10px 0', color: 'var(--light-color)'}}><a href="https://piesites.com">Privary Policy</a><a href="https://piesites.com">Customer Support</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                {/* <Footer /> */}
             </main>
         </>
     );

@@ -1,5 +1,4 @@
 import React from 'react';
-import './style.css'
 
 const TextInput = ({type, placeholder, onChange, style}) => {
     return (

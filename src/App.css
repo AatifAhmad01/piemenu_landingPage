@@ -1,1 +1,26 @@
 @import "tailwindcss";
+
+@font-face {
+    font-family: 'Lovelo';
+    src: url(/src/assets/Lovelo\ Black.otf);
+  }
+  
+/* CSS Reset - Set default padding and margin to 0 */
+/* * {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+} */
+
+:root {
+  background-color: #fffcf8 !important;
+
+  --primary-color: #ff6d1f;
+  --secondary-color: #005eff;
+  --light-color: #faf3ea;
+  --dark-color: #222222;
+}
+
+body {
+    font-family: "DM Sans" !important;
+}

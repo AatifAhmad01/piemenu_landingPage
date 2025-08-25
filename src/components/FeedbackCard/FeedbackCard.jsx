@@ -1,5 +1,4 @@
 import React from 'react';
-import './style.css';
 import Burger from '../../assets/images/burger.webp';
 
 const FeedbackCard = ({pos}) => {
@@ -13,13 +12,13 @@ const FeedbackCard = ({pos}) => {
 
     return (
         <>
-            <div className='feedback-card flex' style={posStyle}>
+            <div className='my-8 p-3 rounded-lg transition-all duration-300 ease-in hover:border hover:border-gray-400 flex' style={posStyle}>
                 <div>
-                    <img className='feedback-card-image' src={Burger}/>
+                    <img className='w-24 h-24 rounded-lg' src={Burger} alt="feedback"/>
                 </div>
-                <div className='feedback-card-details'>
-                    <h3 className='feedback-card-title'>John Doe</h3>
-                    <p className='gray'>“Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Nullam nec magna ac libero ultrices tempus. Donec ac ex sit amet nunc lacinia ultrices.”</p>
+                <div className='ml-4'>
+                    <h3 className='mb-0 text-lg'>John Doe</h3>
+                    <p className='text-gray-600'>"Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Nullam nec magna ac libero ultrices tempus. Donec ac ex sit amet nunc lacinia ultrices."</p>
                 </div>
             </div>
         </>

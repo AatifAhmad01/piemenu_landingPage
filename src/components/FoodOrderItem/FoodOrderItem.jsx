@@ -1,7 +1,7 @@
 import React from 'react';
 import FoodCard from '../FoodCard/FoodCard';
 import SecondaryButton from '../SecondaryButton/SecondaryButton';
-import './style.css';
+
 
 const FoodOrderItem = ({image}) => {
     return (

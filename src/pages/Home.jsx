@@ -28,8 +28,7 @@ const Home = () => {
         <>
             <main>
                 {/* Hero Section */}
-
-                <section>
+                <section className=''>
                     <div className='hero-bg-design'>
                         <Circle size="200px" style={{backgroundColor: 'var(--primary-color)', position: 'absolute', top: '-130px'}}/>
                         <div className='d-none d-lg-block'>

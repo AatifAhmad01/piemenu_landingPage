@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Circle = ({style, size}) => {
+const Circle = ({style, size, className}) => {
     return (
         <>
-            <div className="circle" style={{...style, borderRadius: '50%', height: size, width: size, zIndex: -10}}></div> 
+            <div className={`circle ${className}`} style={{...style, borderRadius: '50%', height: size, width: size, zIndex: -10}}></div> 
         </>
     );
 };

@@ -25,17 +25,17 @@ const Hero = () => {
                 <div className='absolute bottom-1/4 left-1/4 w-32 h-32 bg-gradient-to-r from-green-400 to-teal-500 rounded-full opacity-10 blur-2xl animate-pulse'></div>
             </div>
 
-            <div className="container px-4 max-w-6xl min-h-screen flex flex-col justify-center items-center m-auto relative z-10">
+            <div className="container max-w-6xl min-h-screen flex flex-col justify-center items-center m-auto relative z-10 mt-20">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full">
                     {/* Content Section */}
                     <div className={`space-y-6 transition-all duration-1000 transform ${
                         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
                     }`}>
                         {/* Badge */}
-                        <div className='inline-flex items-center gap-2 bg-gradient-to-r from-orange-50 to-orange-100 text-orange-700 px-3 py-1.5 rounded-full border border-orange-200 shadow-sm'>
+                        {/* <div className='inline-flex items-center gap-2 bg-gradient-to-r from-orange-50 to-orange-100 text-orange-700 px-3 py-1.5 rounded-full border border-orange-200 shadow-sm'>
                             <div className='w-1.5 h-1.5 bg-orange-500 rounded-full animate-pulse'></div>
                             <span className='text-xs font-medium'>🚀 Launch Your Menu Online</span>
-                        </div>
+                        </div> */}
                         
                         {/* Main Heading */}
                         <div className='space-y-4'>
@@ -43,7 +43,7 @@ const Hero = () => {
                                 Publish Your Restaurant 
                                 <span className='bg-gradient-to-r from-orange-500 to-orange-700 bg-clip-text text-transparent'> Menu Online</span>
                             </h1>
-                            <p className='text-base lg:text-lg text-gray-600 leading-relaxed max-w-md'>
+                            <p className='text-base lg:text-md text-gray-600 leading-relaxed max-w-md'>
                                 Instantly create and share your restaurant's menu online. Make it easy for customers to browse your dishes from any device, anytime.
                             </p>
                         </div>

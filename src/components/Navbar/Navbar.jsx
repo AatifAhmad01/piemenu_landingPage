@@ -20,10 +20,31 @@ const Navbar = () => {
     };
 
     const NavLinkItem = ({name, url, isActive = false}) => {
+        const handleClick = (e) => {
+            e.preventDefault();
+            const targetId = url.replace('#', '');
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                // Calculate offset to account for fixed navbar
+                const navbarHeight = 80; // Adjust based on your navbar height
+                const targetPosition = targetElement.offsetTop - navbarHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+            
+            // Close mobile menu if open
+            setIsMenuOpen(false);
+        };
+
         return (
-            <Link 
-                to={url} 
-                className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 group ${
+            <a 
+                href={url}
+                onClick={handleClick}
+                className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 group cursor-pointer ${
                     isActive 
                         ? 'text-blue-600' 
                         : 'text-gray-700 hover:text-blue-600'
@@ -33,7 +54,7 @@ const Navbar = () => {
                 <span className={`absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 group-hover:w-full ${
                     isActive ? 'w-full' : ''
                 }`}></span>
-            </Link>
+            </a>
         )
     }
 
@@ -47,8 +68,8 @@ const Navbar = () => {
             url: '#pricing'
         },
         {
-            name: 'About',
-            url: '#about'
+            name: 'Reviews',
+            url: '#reviews'
         },
         {
             name: 'Contact',
@@ -56,7 +77,7 @@ const Navbar = () => {
         },
         {
             name: 'Login',
-            url: '#login'
+            url: '/auth'
         },
     ]
 
@@ -90,7 +111,7 @@ const Navbar = () => {
                         
                         {/* Login Link */}
                         <Link 
-                            to="#login" 
+                            to="/auth" 
                             className="text-gray-700 hover:text-blue-600 px-4 py-2 text-sm font-medium transition-colors duration-300"
                         >
                             {navItems[navItems.length - 1].name}
@@ -146,21 +167,36 @@ const Navbar = () => {
                         {/* Mobile Nav Items */}
                         <div className="space-y-2">
                             {navItems.slice(0, -1).map((item, index) => (
-                                <Link
+                                <a
                                     key={index}
-                                    to={item.url}
-                                    className="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg text-base font-medium transition-all duration-200 transform hover:translate-x-2"
-                                    onClick={() => setIsMenuOpen(false)}
+                                    href={item.url}
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        const targetId = item.url.replace('#', '');
+                                        const targetElement = document.getElementById(targetId);
+                                        
+                                        if (targetElement) {
+                                            const navbarHeight = 80;
+                                            const targetPosition = targetElement.offsetTop - navbarHeight;
+                                            
+                                            window.scrollTo({
+                                                top: targetPosition,
+                                                behavior: 'smooth'
+                                            });
+                                        }
+                                        setIsMenuOpen(false);
+                                    }}
+                                    className="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg text-base font-medium transition-all duration-200 transform hover:translate-x-2 cursor-pointer"
                                 >
                                     {item.name}
-                                </Link>
+                                </a>
                             ))}
                         </div>
                         
                         {/* Divider */}
                         <div className="border-t border-gray-200 pt-4">
                             <Link
-                                to="#login"
+                                to="/auth"
                                 className="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg text-base font-medium transition-all duration-200"
                                 onClick={() => setIsMenuOpen(false)}
                             >

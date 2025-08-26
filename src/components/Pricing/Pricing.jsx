@@ -11,6 +11,7 @@ const Pricing = () => {
             period: '/month',
             description: 'Perfect for small restaurants getting started',
             features: [
+                { name: '10 Menu Items', included: true },
                 { name: 'Online digital menu', included: true },
                 { name: '1,000 views per month', included: true },
                 { name: '100 orders per month', included: true },
@@ -31,6 +32,7 @@ const Pricing = () => {
             description: 'Perfect for growing restaurants',
             features: [
                 { name: 'Everything in Starter', included: true },
+                { name: 'Unlimited Menu Items', included: true },
                 { name: 'Unlimited views & orders', included: true },
                 { name: 'Advanced analytics', included: true },
                 { name: 'Table reservations', included: true },

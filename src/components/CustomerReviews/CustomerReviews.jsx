@@ -93,7 +93,7 @@ const CustomerReviews = () => {
     ];
 
     return (
-        <section className='py-16 lg:py-24 relative bg-gradient-to-br from-gray-50 to-white'>
+        <section className='py-16 lg:py-24 relative bg-gradient-to-br from-gray-50 to-white' id='reviews'>
             {/* Background decorations */}
             <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full opacity-10 blur-3xl"></div>
             <div className="absolute bottom-20 right-20 w-40 h-40 bg-gradient-to-r from-green-400 to-teal-500 rounded-full opacity-10 blur-3xl"></div>

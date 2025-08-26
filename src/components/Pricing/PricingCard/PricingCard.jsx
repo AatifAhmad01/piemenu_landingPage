@@ -31,7 +31,7 @@ const PricingCard = ({ plan }) => {
             <FeatureList features={features} />
 
             {/* CTA Button */}
-            <button className={buttonStyle}>
+            <button className={`${buttonStyle} cursor-pointer`} >
                 {buttonText}
             </button>
         </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -6,9 +7,26 @@ const Footer = () => {
     const quickLinks = [
         { name: 'Features', href: '#features' },
         { name: 'Pricing', href: '#pricing' },
-        { name: 'Support', href: '#support' },
+        { name: 'Reviews', href: '#reviews' },
         { name: 'Contact', href: '#contact' }
     ];
+
+    const handleLinkClick = (e, href) => {
+        e.preventDefault();
+        const targetId = href.replace('#', '');
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+            // Calculate offset to account for fixed navbar
+            const navbarHeight = 80; // Adjust based on your navbar height
+            const targetPosition = targetElement.offsetTop - navbarHeight;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    };
 
     const socialLinks = [
         {
@@ -41,7 +59,7 @@ const Footer = () => {
     ];
 
     return (
-        <footer className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white">
+        <footer className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white" id='contact'>
             {/* Main Footer Content */}
             <div className="container mx-auto px-4 py-12">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
@@ -85,7 +103,8 @@ const Footer = () => {
                                 <li key={link.name}>
                                     <a
                                         href={link.href}
-                                        className="text-gray-300 hover:text-white hover:pl-2 transition-all duration-300 inline-block"
+                                        onClick={(e) => handleLinkClick(e, link.href)}
+                                        className="text-gray-300 hover:text-white hover:pl-2 transition-all duration-300 inline-block cursor-pointer"
                                     >
                                         {link.name}
                                     </a>
@@ -122,12 +141,12 @@ const Footer = () => {
                             © {currentYear} PieMenu. All rights reserved.
                         </div>
                         <div className="flex space-x-6 text-sm">
-                            <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
+                            <Link to="/privacy-policy" className="text-gray-400 hover:text-white transition-colors duration-300">
                                 Privacy Policy
-                            </a>
-                            <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
+                            </Link>
+                            <Link to="/terms-of-service" className="text-gray-400 hover:text-white transition-colors duration-300">
                                 Terms of Service
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

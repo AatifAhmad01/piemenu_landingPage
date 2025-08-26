@@ -28,7 +28,7 @@ const Home = () => {
 
     return (
         <>
-            <main className=''>
+            <main>
                 <Hero />
 
                 {/* How It Works Section */}
